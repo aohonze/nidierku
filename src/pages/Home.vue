@@ -1,28 +1,48 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { HomeOutlined, GoogleOutlined } from '@ant-design/icons-vue';
 </script>
 
 <template>
-  <h1>nidierku vue template</h1>
+  <div class="home-page">
+    <div class="title">nidierku</div>
 
-  <router-link to="/home">Go to Home</router-link>
-  <router-link to="/about">Go to About</router-link>
+    <div class="discription">
+      This is a template, powered by vue3, ts, vite, antd-vue...
+    </div>
+
+    <div class="action">
+      <a-button>
+        <home-outlined />
+        <router-link to="/home"></router-link>
+      </a-button>
+      <a-button>
+        <router-link to="/about">
+          <google-outlined />
+        </router-link>
+      </a-button>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
-}
+<style scoped lang="less">
+.home-page {
+  .title {
+    font-size: 68px;
+    font-family: fantasy;
+  }
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+  .discription {
+    font-size: 24px;
+    color: #aaaaaa;
+  }
+  .action {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    .ant-btn:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
 }
 </style>
