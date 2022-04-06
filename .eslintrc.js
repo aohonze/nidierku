@@ -10,10 +10,19 @@ module.exports = defineConfig({
     browser: true,
     es2021: true,
   },
+  // 解决defineProps' is not defined.
+//    globals: {
+//     defineProps: 'readonly',
+//     defineEmits: 'readonly',
+//     defineExpose: 'readonly',
+//     withDefaults: 'readonly',
+//   },
   // 启用的规则
   extends: [
     'plugin:vue/vue3-recommended',
     'standard',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     // js的版本
