@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { HomeOutlined, GoogleOutlined } from '@ant-design/icons-vue';
+import {
+  HomeOutlined,
+  GoogleOutlined,
+  SkinOutlined,
+} from '@ant-design/icons-vue';
 import { useDark, useToggle } from '@vueuse/core';
+import ThemeSwitch from '../components/common/ThemeSwitch.vue';
 
 const isDark = useDark({
   selector: '#app',
@@ -35,10 +40,7 @@ const toggleDark = useToggle(isDark);
           <GoogleOutlined />
           About
         </a-button>
-        <a-button @click="toggleDark">
-          <GoogleOutlined />
-          About
-        </a-button>
+        <ThemeSwitch />
       </div>
     </div>
   </div>
@@ -70,7 +72,7 @@ const toggleDark = useToggle(isDark);
 
   .discription {
     font-size: 24px;
-    color: #aaaaaa;
+    text-align: center;
   }
   .action {
     margin-top: 32px;
