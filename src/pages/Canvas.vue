@@ -1,25 +1,5 @@
 <template>
-  <div class="home-page">
-    <div class="side">
-      <div class="title">nidierku</div>
-    </div>
-    <div class="content">
-      <div class="discription">
-        This is a template, powered by vue3, ts, vite, antd-vue...
-      </div>
-
-      <div class="action">
-        <a-button target="/home">
-          <HomeOutlined />
-          Home
-        </a-button>
-        <a-button target="/about">
-          <GoogleOutlined />
-          About
-        </a-button>
-      </div>
-    </div>
-  </div>
+  <div class="canvas-page"></div>
 </template>
 
 <script setup lang="ts">
@@ -28,11 +8,11 @@ import { HomeOutlined, GoogleOutlined } from '@ant-design/icons-vue';
 </script>
 
 <style scoped lang="scss">
-.home-page {
+.canvas-page {
   display: flex;
-  min-height: calc(100vh - 88px);
   margin: $mpmd;
   border-radius: 12px;
+  min-height: calc(100vh - 88px);
   background-color: $color-white;
   .side {
     display: flex;

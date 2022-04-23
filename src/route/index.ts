@@ -1,11 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 const Home = () => import('@/pages/Home.vue');
+const Canvas = () => import('@/pages/Canvas.vue');
 const NotFound = () => import('@/components/common/NotFound.vue');
 
 const routes = [
   { path: '/', redirect: '/home' },
-  { path: '/home', component: Home },
+  { path: '/home', name: 'home', component: Home },
+  { path: '/canvas', name: 'canvas', component: Canvas },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ];
 
