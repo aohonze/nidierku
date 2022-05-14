@@ -1,14 +1,41 @@
 <template>
   <a-layout-header class="header-container">
     <ThemeSwitch />
-    <a-avatar style="background-color: #f56a00">K</a-avatar>
+    <a-dropdown>
+      <a-avatar style="background-color: #f56a00">K</a-avatar>
+      <template #overlay>
+        <a-menu @click="handleMenuClick">
+          <a-menu-item key="1">
+            <ProfileOutlined />
+            User Info
+          </a-menu-item>
+          <a-menu-item key="2">
+            <SettingOutlined />
+            Setting
+          </a-menu-item>
+          <a-menu-item key="3">
+            <UserOutlined />
+            Log out
+          </a-menu-item>
+        </a-menu>
+      </template>
+      <template #icon><UserOutlined /></template>
+    </a-dropdown>
   </a-layout-header>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { UserOutlined } from '@ant-design/icons-vue';
+import {
+  UserOutlined,
+  SettingOutlined,
+  ProfileOutlined,
+} from '@ant-design/icons-vue';
 import ThemeSwitch from './ThemeSwitch.vue';
+
+const handleMenuClick = (e) => {
+  console.log(e);
+};
 </script>
 
 <style lang="scss">

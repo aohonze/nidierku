@@ -23,7 +23,7 @@ import HeaderNavBar from '@/components/common/HeaderNavBar.vue';
   .dashboard-body {
     height: 100vh;
     min-width: $md;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 </style>
